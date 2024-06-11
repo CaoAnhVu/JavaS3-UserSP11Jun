@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form action="#" th:object="${role}" th:action="@{/roles/save}" method="post">
+  <table>
+    <tr>
+      <td>Role Name</td>
+      <td><input type="text" th:field="*{role_name}"></td>
+    </tr>
+  </table>
+  <input type="submit" value="Create">
+</form>
+</body>
+</html>

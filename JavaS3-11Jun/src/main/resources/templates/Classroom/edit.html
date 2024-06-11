@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="Fragments/lib.html::lib('Edit')">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="'/classrooms/saveedit'" method="post" th:object="${classroom}">
+    <table>
+        <tr>
+            <td>ID</td>
+            <td><input type="text" readonly="readonly" th:field="*{classID}"></td>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td><input type="text" th:field="*{name}"></td>
+        </tr>
+
+    </table>
+    <input type="submit" value="Save">
+</form>
+</body>
+</html>

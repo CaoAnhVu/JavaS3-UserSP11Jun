@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="Fragment/lib.html::lib('Role')">>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table">
+    <thead class="thead-dark">
+    <td>STT</td>
+    <td>ID</td>
+    <td>Name</td>
+    </thead>
+    <tbody>
+    <tr th:each="role : ${roles}">
+        <td th:text="${roleStat.index+1}"></td>
+        <td th:text="${role.role_id}"></td>
+        <td th:text="${role.role_name}"></td>
+    </tr>
+    </tbody>
+</table>
+<button onclick="location.href='/roles/new'">Create</button>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="Fragment/lib.html::lib('User')">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table">
+    <thead class="thead-dark">
+    <td>STT</td>
+    <td>ID</td>
+    <td>UserName</td>
+    <td>Password</td>
+    <td>Email</td>
+    <td>FirstName</td>
+    <td>LastName</td>
+    <td>DateOfBirth</td>
+    <td>Role</td>
+    <td>Action</td>
+    </thead>
+    <tbody>
+    <tr th:each = "user:${users}">
+        <td th:text="${userStat.index+1}"></td>
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.password}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td th:text="${user.birthDay}"></td>
+        <td th:text="${user.role.getRole_name()}"></td>
+        <td>
+            <a th:href="'/users/edit/'+${user.id}">EDIT</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<button onclick="location.href='/users/new'">Create</button>
+</body>
+</html>

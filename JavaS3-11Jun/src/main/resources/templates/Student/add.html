@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="Fragments/lib.html::lib('Create')">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="#" th:action="'/students/save'" method="post" th:object="${student}">
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" th:field="*{firstName}"></td>
+            </tr>
+            <tr>
+                <td>LastName Name</td>
+                <td><input type="text" th:field="*{lastName}"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" th:field="*{email}"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" th:field="*{password}"></td>
+            </tr>
+            <tr>
+                <td>DateOfBirth</td>
+                <td><input type="date" th:field="*{dateOfBirth}"></td>
+            </tr>
+            <tr>
+                <td>Classroom</td>
+                <td>
+                    <select>
+                        <option th:each="class : ${classes}" th:text="${class.name}" th:value="${class.classID}"></option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Create">
+    </form>
+</body>
+</html>
